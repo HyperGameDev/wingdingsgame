@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch21db6y0i2es"]
+
+[ext_resource type="Script" uid="uid://bphx4ejp8gn4s" path="res://bomb.gd" id="1_573fp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hd1ut"]
+radius = 18.09
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_torwd"]
+radius = 21.89
+
+[node name="Bomb" type="StaticBody2D"]
+script = ExtResource("1_573fp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 48)
+shape = SubResource("CircleShape2D_hd1ut")
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 1.0
+offset_right = 79.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 71
+text = "M"
+
+[node name="Area" type="Area2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area"]
+position = Vector2(24, 48)
+shape = SubResource("CircleShape2D_torwd")

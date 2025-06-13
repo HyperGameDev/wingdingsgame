@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4ayh2oj5acgt"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ayh2oj5acgt"]
 
 [ext_resource type="Script" uid="uid://cfjcmju6pu64e" path="res://player.gd" id="1_4to46"]
 [ext_resource type="Script" uid="uid://b6bbob6b4lwyq" path="res://main_scene.gd" id="1_nkbvh"]
 [ext_resource type="PackedScene" uid="uid://drm8bs6g116s8" path="res://level_pip.tscn" id="1_s3bci"]
 [ext_resource type="Theme" uid="uid://cl6bndf7m7eks" path="res://icons.tres" id="2_26gr6"]
-[ext_resource type="Script" uid="uid://bphx4ejp8gn4s" path="res://bomb.gd" id="3_torwd"]
+[ext_resource type="PackedScene" uid="uid://c32xhm2lbocxd" path="res://level.tscn" id="7_hd1ut"]
 
 [sub_resource type="Gradient" id="Gradient_torwd"]
 offsets = PackedFloat32Array(0, 0.501217)
@@ -24,12 +24,6 @@ gradient = SubResource("Gradient_nkbvh")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_avyh0"]
 radius = 27.3
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hd1ut"]
-radius = 18.09
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_torwd"]
-radius = 21.89
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_nkbvh")
@@ -55,14 +49,6 @@ texture = SubResource("GradientTexture2D_dnbgo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(575, 449)
 shape = SubResource("WorldBoundaryShape2D_feo16")
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 284.0
-offset_top = 289.0
-offset_right = 359.0
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 71
-text = "%"
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 800.0
@@ -112,28 +98,9 @@ theme = ExtResource("2_26gr6")
 theme_override_font_sizes/font_size = 71
 text = "J"
 
-[node name="Bomb" type="StaticBody2D" parent="."]
-position = Vector2(166, 381)
-script = ExtResource("3_torwd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb"]
-position = Vector2(24, 48)
-shape = SubResource("CircleShape2D_hd1ut")
-
-[node name="Label2" type="Label" parent="Bomb"]
-offset_top = 1.0
-offset_right = 79.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 71
-text = "M"
-
-[node name="Area" type="Area2D" parent="Bomb"]
-light_mask = 0
-visibility_layer = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bomb/Area"]
-position = Vector2(24, 48)
-shape = SubResource("CircleShape2D_torwd")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level" parent="Levels" instance=ExtResource("7_hd1ut")]

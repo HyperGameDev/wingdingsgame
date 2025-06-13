@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 SignalBus="*res://signal_bus.gd"
 Globals="*res://globals.gd"
 
+[display]
+
+window/size/viewport_width=900
+window/stretch/mode="viewport"
+
 [gui]
 
 theme/custom_font="uid://cps0a5oomu1t0"
