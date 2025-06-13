@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4ayh2oj5acgt"]
+
+[ext_resource type="Script" uid="uid://cfjcmju6pu64e" path="res://player.gd" id="1_4to46"]
+[ext_resource type="Theme" uid="uid://cl6bndf7m7eks" path="res://icons.tres" id="2_26gr6"]
+[ext_resource type="Script" uid="uid://bphx4ejp8gn4s" path="res://bomb.gd" id="3_torwd"]
+
+[sub_resource type="Gradient" id="Gradient_torwd"]
+offsets = PackedFloat32Array(0, 0.501217)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s3bci"]
+gradient = SubResource("Gradient_torwd")
+
+[sub_resource type="Gradient" id="Gradient_nkbvh"]
+offsets = PackedFloat32Array(0, 0.839416)
+colors = PackedColorArray(0.758192, 0.758192, 0.758192, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dnbgo"]
+gradient = SubResource("Gradient_nkbvh")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feo16"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avyh0"]
+radius = 27.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hd1ut"]
+radius = 18.09
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_torwd"]
+radius = 21.89
+
+[node name="Main_Scene" type="Node2D"]
+
+[node name="Sky" type="TextureRect" parent="."]
+offset_left = 1172.0
+offset_top = -367.0
+offset_right = 2247.0
+offset_bottom = 815.0
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_s3bci")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Ground"]
+offset_left = 1162.0
+offset_top = 448.0
+offset_right = 1393.0
+offset_bottom = 1630.0
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_dnbgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(575, 449)
+shape = SubResource("WorldBoundaryShape2D_feo16")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 284.0
+offset_top = 289.0
+offset_right = 359.0
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 71
+text = "%"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 355.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 71
+text = "NMwb6P"
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(0, 384)
+collision_layer = 3
+script = ExtResource("1_4to46")
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2(38, 5)
+shape = SubResource("CircleShape2D_avyh0")
+
+[node name="Label_Health" type="Label" parent="Player"]
+offset_left = 8.0
+offset_top = -35.0
+offset_right = 83.0
+offset_bottom = 44.0
+theme = ExtResource("2_26gr6")
+theme_override_font_sizes/font_size = 71
+text = "J"
+
+[node name="Bomb" type="StaticBody2D" parent="."]
+position = Vector2(166, 381)
+script = ExtResource("3_torwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb"]
+position = Vector2(24, 48)
+shape = SubResource("CircleShape2D_hd1ut")
+
+[node name="Label2" type="Label" parent="Bomb"]
+offset_top = 1.0
+offset_right = 79.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 71
+text = "M"
+
+[node name="Area" type="Area2D" parent="Bomb"]
+light_mask = 0
+visibility_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bomb/Area"]
+position = Vector2(24, 48)
+shape = SubResource("CircleShape2D_torwd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
