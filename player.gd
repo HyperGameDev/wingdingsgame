@@ -15,6 +15,8 @@ func _on_enemy_touched() -> void: #M
 	health -= 1
 
 func _physics_process(delta: float) -> void:
+	if health > 0:
+		move_and_slide()
 	match health:
 		3:
 			label_health.text = "J"
@@ -24,6 +26,11 @@ func _physics_process(delta: float) -> void:
 			label_health.text = "L"
 		0:
 			label_health.text = "N"
+			var tween: Tween = create_tween()
+			tween.tween_property(label_health,"scale",Vector2(5.,5.),2.)
+			await get_tree().create_timer(2.).timeout
+			SignalBus.restart.emit()
+			
 		_:
 			pass
 	
@@ -40,5 +47,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()

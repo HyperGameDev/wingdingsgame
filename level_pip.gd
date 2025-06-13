@@ -8,10 +8,11 @@ extends Label
 
 func _ready() -> void:
 	SignalBus.update_level.connect(_on_update_level)
+	
+	_on_update_level()
 
 func _on_update_level() -> void:
-	if Globals.level -- my_level:
-		print("Level: ",my_level)
+	if Globals.level == my_level:
 		label_highlight.visible = true
 	else:
 		label_highlight.visible = false
