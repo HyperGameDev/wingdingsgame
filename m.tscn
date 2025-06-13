@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4ayh2oj5acgt"]
+[gd_scene load_steps=14 format=3 uid="uid://c4ayh2oj5acgt"]
 
 [ext_resource type="Script" uid="uid://cfjcmju6pu64e" path="res://player.gd" id="1_4to46"]
+[ext_resource type="Script" uid="uid://b6bbob6b4lwyq" path="res://main_scene.gd" id="1_nkbvh"]
+[ext_resource type="PackedScene" uid="uid://drm8bs6g116s8" path="res://level_pip.tscn" id="1_s3bci"]
 [ext_resource type="Theme" uid="uid://cl6bndf7m7eks" path="res://icons.tres" id="2_26gr6"]
 [ext_resource type="Script" uid="uid://bphx4ejp8gn4s" path="res://bomb.gd" id="3_torwd"]
 
@@ -30,6 +32,7 @@ radius = 18.09
 radius = 21.89
 
 [node name="Main_Scene" type="Node2D"]
+script = ExtResource("1_nkbvh")
 
 [node name="Sky" type="TextureRect" parent="."]
 offset_left = 1172.0
@@ -62,12 +65,34 @@ theme_override_font_sizes/font_size = 71
 text = "%"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1.0
+offset_left = 800.0
 offset_top = 5.0
-offset_right = 355.0
+offset_right = 1154.0
 offset_bottom = 84.0
 theme_override_font_sizes/font_size = 71
 text = "NMwb6P"
+
+[node name="Hbox_Level" type="HBoxContainer" parent="."]
+offset_left = 16.0
+offset_right = 224.0
+offset_bottom = 52.0
+theme_override_constants/separation = 24
+
+[node name="Label_Level" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+my_level = 1
+
+[node name="Label_Level2" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+my_level = 2
+
+[node name="Label_Level3" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+my_level = 3
+
+[node name="Label_Level4" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+my_level = 4
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(0, 384)
