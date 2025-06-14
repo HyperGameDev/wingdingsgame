@@ -11,7 +11,6 @@ func _ready() -> void:
 	
 func _on_body_entered(body) -> void:
 	if is_open and body is Player:
-		print("MMMM")
 		SignalBus.update_level.emit()
 		var next_level: Node2D = load(Globals.levels[Globals.level]).instantiate()
 		Level_Node.ref.add_child(next_level)

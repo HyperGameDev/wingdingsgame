@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://rhdrur4fq7yj"]
+
+[ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="1_8ons7"]
+[ext_resource type="PackedScene" uid="uid://hwplvo8miasa" path="res://platform.tscn" id="2_tac4s"]
+[ext_resource type="PackedScene" uid="uid://bas1p7jkp56oj" path="res://folder.tscn" id="3_qhsfq"]
+[ext_resource type="PackedScene" uid="uid://br66k50gttw1q" path="res://ghost.tscn" id="3_tac4s"]
+[ext_resource type="PackedScene" uid="uid://lfos343l71fg" path="res://ice_big.tscn" id="4_kcwpe"]
+[ext_resource type="PackedScene" uid="uid://ch21db6y0i2es" path="res://bomb.tscn" id="5_j6qfn"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label_Bell" parent="." instance=ExtResource("1_8ons7")]
+position = Vector2(0, 24)
+
+[node name="Label_Bell2" parent="." instance=ExtResource("1_8ons7")]
+position = Vector2(832, 24)
+
+[node name="Platform" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 88)
+
+[node name="Platform13" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(699, 88)
+
+[node name="Platform14" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(853, 88)
+
+[node name="Platform2" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 107)
+
+[node name="Platform3" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 126)
+
+[node name="Platform4" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 146)
+
+[node name="Platform5" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 165)
+
+[node name="Platform6" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 185)
+
+[node name="Platform7" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 205)
+
+[node name="Platform8" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 225)
+
+[node name="Platform9" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 244)
+
+[node name="Platform10" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 263)
+
+[node name="Ghost" parent="." instance=ExtResource("3_tac4s")]
+position = Vector2(104, 376)
+
+[node name="Platform11" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 282)
+
+[node name="Platform12" parent="." instance=ExtResource("2_tac4s")]
+position = Vector2(0, 301)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 448)
+
+[node name="Folder" parent="." instance=ExtResource("3_qhsfq")]
+position = Vector2(688, 376)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_kcwpe")]
+position = Vector2(780, 338)
+can_sleep = false
+
+[node name="Ghost3" parent="." instance=ExtResource("3_tac4s")]
+position = Vector2(388, 157)
+
+[node name="Bomb2" parent="." instance=ExtResource("5_j6qfn")]
+position = Vector2(472, 155)
+
+[node name="Bomb4" parent="." instance=ExtResource("5_j6qfn")]
+position = Vector2(557, 154)
+
+[node name="Ghost2" parent="." instance=ExtResource("3_tac4s")]
+position = Vector2(636, 157)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4ayh2oj5acgt"]
+[gd_scene load_steps=22 format=3 uid="uid://c4ayh2oj5acgt"]
 
 [ext_resource type="Script" uid="uid://cfjcmju6pu64e" path="res://player.gd" id="1_4to46"]
 [ext_resource type="Script" uid="uid://b6bbob6b4lwyq" path="res://main_scene.gd" id="1_nkbvh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://dwxjbcrnawdl1" path="res://damage.gdshader" id="4_feo16"]
 [ext_resource type="Script" uid="uid://4j4k5bu3884i" path="res://level_node.gd" id="5_dnbgo"]
 [ext_resource type="PackedScene" uid="uid://bpafo7t4j4d83" path="res://level_1.tscn" id="6_dnbgo"]
+[ext_resource type="Shader" uid="uid://emj3tnq6pxdb" path="res://color_swap.gdshader" id="8_avyh0"]
 
 [sub_resource type="Gradient" id="Gradient_torwd"]
 offsets = PackedFloat32Array(0, 0.501217)
@@ -43,6 +44,17 @@ shader_parameter/flash_color = Color(1, 0, 0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dnbgo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_avyh0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hd1ut"]
+shader = ExtResource("8_avyh0")
+shader_parameter/mode = 0
+
+[sub_resource type="Gradient" id="Gradient_xsw1n"]
+offsets = PackedFloat32Array(0.982517)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lr0gk"]
+gradient = SubResource("Gradient_xsw1n")
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_nkbvh")
@@ -101,10 +113,11 @@ theme_override_font_sizes/font_size = 71
 text = "NMwb6P"
 
 [node name="Hbox_Level" type="HBoxContainer" parent="."]
-offset_left = 16.0
-offset_right = 224.0
+offset_left = 280.0
+offset_right = 620.0
 offset_bottom = 52.0
 theme_override_constants/separation = 24
+alignment = 1
 
 [node name="Label_Level" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
 layout_mode = 2
@@ -121,6 +134,15 @@ my_level = 3
 [node name="Label_Level4" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
 layout_mode = 2
 my_level = 4
+
+[node name="Label_Level5" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+my_level = 5
+
+[node name="Label_Level6" parent="Hbox_Level" instance=ExtResource("1_s3bci")]
+layout_mode = 2
+text = "P"
+my_level = 6
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(0, 384)
@@ -196,3 +218,9 @@ shape = SubResource("WorldBoundaryShape2D_dnbgo")
 position = Vector2(900, 328)
 rotation = 4.71238
 shape = SubResource("WorldBoundaryShape2D_avyh0")
+
+[node name="Post_color" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_hd1ut")
+offset_right = 1008.0
+offset_bottom = 672.0
+texture = SubResource("GradientTexture2D_lr0gk")

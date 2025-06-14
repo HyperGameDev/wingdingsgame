@@ -16,7 +16,7 @@ position = Vector2(304, 312)
 position = Vector2(0, 448)
 
 [node name="Label_Bell" parent="." instance=ExtResource("2_nmjpi")]
-position = Vector2(312, 384)
+position = Vector2(296, 374)
 
 [node name="Folder" parent="." instance=ExtResource("3_xdadj")]
 position = Vector2(736, 378)
