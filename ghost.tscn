@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://deirrxt62xbuc" path="res://ghost.gd" id="1_v5pp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5pp4"]
-radius = 25.84
+radius = 18.64
 
 [node name="Ghost" type="Area2D"]
 script = ExtResource("1_v5pp4")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(34, 46)
+position = Vector2(24, 47)
 shape = SubResource("CircleShape2D_v5pp4")
 
 [node name="Label_Ghost" type="Label" parent="."]
@@ -17,8 +17,7 @@ offset_top = 1.0
 offset_right = 79.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 71
-text = "b"
+text = "M"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true

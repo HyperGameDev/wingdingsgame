@@ -8,6 +8,8 @@ extends Area2D
 
 var is_ghost: bool = true
 
+var ghost_length: float = 0.
+
 
 var player_seen: bool = false
 
@@ -17,11 +19,20 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	
+	randomize_time()
+	
+	#await get_tree().create_timer(ghost_length)
+	timer.start(ghost_length)
+
+func randomize_time() -> void:
+	ghost_length = randf_range(1.,2.)
+	
 func _on_body_entered(body) -> void:
 	if not player_seen: 
 		if body is Player:
-			player_seen = true
-			SignalBus.enemy_touched.emit()
+			if label_ghost.modulate.a == 1:
+				player_seen = true
+				SignalBus.enemy_touched.emit()
 
 func _on_body_exited(body) -> void:
 	if body is Player:

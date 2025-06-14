@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpafo7t4j4d83"]
 
 [ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="1_hbghi"]
-[ext_resource type="PackedScene" uid="uid://br66k50gttw1q" path="res://ghost.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://bas1p7jkp56oj" path="res://folder.tscn" id="2_hbghi"]
 
 [node name="Level" type="Node2D"]
 
@@ -11,5 +11,5 @@ position = Vector2(384, 376)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 448)
 
-[node name="Ghost" parent="." instance=ExtResource("2_hn12h")]
-position = Vector2(240, 368)
+[node name="Folder" parent="." instance=ExtResource("2_hbghi")]
+position = Vector2(688, 376)

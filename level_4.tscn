@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfa0f8kuce4o2"]
+
+[ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="1_na6m6"]
+[ext_resource type="PackedScene" uid="uid://hwplvo8miasa" path="res://platform.tscn" id="2_48hld"]
+[ext_resource type="PackedScene" uid="uid://bas1p7jkp56oj" path="res://folder.tscn" id="2_xcfcc"]
+[ext_resource type="PackedScene" uid="uid://ch21db6y0i2es" path="res://bomb.tscn" id="4_48hld"]
+[ext_resource type="PackedScene" uid="uid://lfos343l71fg" path="res://ice_big.tscn" id="4_l45re"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label_Bell" parent="." instance=ExtResource("1_na6m6")]
+position = Vector2(768, 24)
+
+[node name="Platform" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 88)
+
+[node name="Platform2" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 107)
+
+[node name="Platform3" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 126)
+
+[node name="Platform4" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 146)
+
+[node name="Platform5" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 165)
+
+[node name="Platform6" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 185)
+
+[node name="Platform7" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 205)
+
+[node name="Platform8" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 225)
+
+[node name="Platform9" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 244)
+
+[node name="Platform10" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 263)
+
+[node name="Platform11" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 282)
+
+[node name="Platform12" parent="." instance=ExtResource("2_48hld")]
+position = Vector2(680, 301)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 448)
+
+[node name="Folder" parent="." instance=ExtResource("2_xcfcc")]
+position = Vector2(688, 376)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_l45re")]
+position = Vector2(248, 340)
+can_sleep = false
+
+[node name="Bomb2" parent="." instance=ExtResource("4_48hld")]
+position = Vector2(69, 158)
+
+[node name="Bomb3" parent="." instance=ExtResource("4_48hld")]
+position = Vector2(149, 158)
+
+[node name="Bomb4" parent="." instance=ExtResource("4_48hld")]
+position = Vector2(221, 158)
+
+[node name="Bomb5" parent="." instance=ExtResource("4_48hld")]
+position = Vector2(301, 158)

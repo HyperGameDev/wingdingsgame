@@ -1,19 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba5arx1ufnjgu"]
+[gd_scene load_steps=4 format=3 uid="uid://ba5arx1ufnjgu"]
 
 [ext_resource type="PackedScene" uid="uid://ch21db6y0i2es" path="res://bomb.tscn" id="1_jg0dc"]
+[ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="2_nmjpi"]
+[ext_resource type="PackedScene" uid="uid://bas1p7jkp56oj" path="res://folder.tscn" id="3_xdadj"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Bomb" parent="." instance=ExtResource("1_jg0dc")]
 position = Vector2(232, 378)
 
+[node name="Bomb2" parent="." instance=ExtResource("1_jg0dc")]
+position = Vector2(304, 312)
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 448)
 
-[node name="Label_Bell" type="Label" parent="."]
-offset_left = 432.0
-offset_top = 288.0
-offset_right = 507.0
-offset_bottom = 367.0
-theme_override_font_sizes/font_size = 71
-text = "%"
+[node name="Label_Bell" parent="." instance=ExtResource("2_nmjpi")]
+position = Vector2(312, 384)
+
+[node name="Folder" parent="." instance=ExtResource("3_xdadj")]
+position = Vector2(736, 378)

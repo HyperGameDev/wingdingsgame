@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4ayh2oj5acgt"]
+[gd_scene load_steps=18 format=3 uid="uid://c4ayh2oj5acgt"]
 
 [ext_resource type="Script" uid="uid://cfjcmju6pu64e" path="res://player.gd" id="1_4to46"]
 [ext_resource type="Script" uid="uid://b6bbob6b4lwyq" path="res://main_scene.gd" id="1_nkbvh"]
 [ext_resource type="PackedScene" uid="uid://drm8bs6g116s8" path="res://level_pip.tscn" id="1_s3bci"]
 [ext_resource type="Theme" uid="uid://cl6bndf7m7eks" path="res://icons.tres" id="2_26gr6"]
+[ext_resource type="Shader" uid="uid://dwxjbcrnawdl1" path="res://damage.gdshader" id="4_feo16"]
 [ext_resource type="Script" uid="uid://4j4k5bu3884i" path="res://level_node.gd" id="5_dnbgo"]
-[ext_resource type="PackedScene" uid="uid://c32xhm2lbocxd" path="res://level.tscn" id="7_hd1ut"]
+[ext_resource type="PackedScene" uid="uid://bpafo7t4j4d83" path="res://level_1.tscn" id="6_dnbgo"]
 
 [sub_resource type="Gradient" id="Gradient_torwd"]
 offsets = PackedFloat32Array(0, 0.501217)
@@ -23,8 +24,25 @@ gradient = SubResource("Gradient_nkbvh")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feo16"]
 
+[sub_resource type="FontVariation" id="FontVariation_dnbgo"]
+variation_embolden = 0.3
+spacing_glyph = -7
+spacing_bottom = -235
+baseline_offset = -0.2
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_avyh0"]
 radius = 27.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_avyh0"]
+shader = ExtResource("4_feo16")
+shader_parameter/hit_effect = 0.0
+shader_parameter/shake_intensity = 10.0
+shader_parameter/flash_speed = 30.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dnbgo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_avyh0"]
 
 [node name="Main_Scene" type="Node2D"]
 script = ExtResource("1_nkbvh")
@@ -40,6 +58,7 @@ texture = SubResource("GradientTexture2D_s3bci")
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Ground"]
+visible = false
 offset_left = 1162.0
 offset_top = 448.0
 offset_right = 1393.0
@@ -50,6 +69,27 @@ texture = SubResource("GradientTexture2D_dnbgo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(575, 449)
 shape = SubResource("WorldBoundaryShape2D_feo16")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ground"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Ground/CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 170
+
+[node name="Label" type="Label" parent="Ground/CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_dnbgo")
+theme_override_font_sizes/font_size = 51
+text = ";;;;;;;;;;;;;;;;;;;;;;;"
+autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="."]
 visible = false
@@ -92,6 +132,7 @@ position = Vector2(38, 5)
 shape = SubResource("CircleShape2D_avyh0")
 
 [node name="Label_Health" type="Label" parent="Player"]
+material = SubResource("ShaderMaterial_avyh0")
 offset_left = 8.0
 offset_top = -35.0
 offset_right = 83.0
@@ -106,4 +147,52 @@ anchor_mode = 0
 [node name="Levels" type="Node2D" parent="."]
 script = ExtResource("5_dnbgo")
 
-[node name="Level" parent="Levels" instance=ExtResource("7_hd1ut")]
+[node name="Level" parent="Levels" instance=ExtResource("6_dnbgo")]
+
+[node name="Stars" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Stars"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 220
+
+[node name="Hbox" type="HBoxContainer" parent="Stars/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Star_1" type="Label" parent="Stars/MarginContainer/Hbox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 291
+text = "´"
+
+[node name="Star_2" type="Label" parent="Stars/MarginContainer/Hbox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 291
+text = "´"
+
+[node name="Star_3" type="Label" parent="Stars/MarginContainer/Hbox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 291
+text = "´"
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(0, 328)
+rotation = -4.71238
+shape = SubResource("WorldBoundaryShape2D_dnbgo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2(900, 328)
+rotation = 4.71238
+shape = SubResource("WorldBoundaryShape2D_avyh0")

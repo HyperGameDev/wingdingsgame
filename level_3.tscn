@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cadwerk4yiehx"]
+
+[ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="1_16pka"]
+[ext_resource type="PackedScene" uid="uid://br66k50gttw1q" path="res://ghost.tscn" id="2_j8bo8"]
+[ext_resource type="PackedScene" uid="uid://bas1p7jkp56oj" path="res://folder.tscn" id="3_1jdk1"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label_Bell" parent="." instance=ExtResource("1_16pka")]
+position = Vector2(384, 376)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 448)
+
+[node name="Ghost" parent="." instance=ExtResource("2_j8bo8")]
+position = Vector2(240, 368)
+
+[node name="Ghost5" parent="." instance=ExtResource("2_j8bo8")]
+position = Vector2(312, 369)
+
+[node name="Ghost2" parent="." instance=ExtResource("2_j8bo8")]
+position = Vector2(240, 288)
+
+[node name="Ghost3" parent="." instance=ExtResource("2_j8bo8")]
+position = Vector2(240, 208)
+
+[node name="Ghost4" parent="." instance=ExtResource("2_j8bo8")]
+position = Vector2(240, 128)
+
+[node name="Folder" parent="." instance=ExtResource("3_1jdk1")]
+position = Vector2(688, 376)

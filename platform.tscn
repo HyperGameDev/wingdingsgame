@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://hwplvo8miasa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(145.5, 18)
+
+[sub_resource type="FontVariation" id="FontVariation_hn12h"]
+variation_embolden = 0.3
+spacing_glyph = -7
+spacing_bottom = -235
+baseline_offset = -0.2
+
+[node name="Platform" type="StaticBody2D"]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(80.75, 24)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 184.0
+offset_bottom = 46.0
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_hn12h")
+theme_override_font_sizes/font_size = 51
+text = ";;;;"
+autowrap_mode = 3
