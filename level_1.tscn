@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpafo7t4j4d83"]
+
+[ext_resource type="PackedScene" uid="uid://doeq5ncbvqkgp" path="res://label_bell.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://br66k50gttw1q" path="res://ghost.tscn" id="2_hn12h"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Label_Bell" parent="." instance=ExtResource("1_hbghi")]
+position = Vector2(384, 376)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 448)
+
+[node name="Ghost" parent="." instance=ExtResource("2_hn12h")]
+position = Vector2(240, 368)

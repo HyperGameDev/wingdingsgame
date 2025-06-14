@@ -4,7 +4,7 @@ class_name Player
 @onready var label_health: Label = $Label_Health
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -600.0 
 
 var health: int = 3
 

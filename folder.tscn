@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bas1p7jkp56oj"]
+
+[ext_resource type="Script" uid="uid://cgs6gt1dudouc" path="res://folder.gd" id="1_mft3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vonw3"]
+size = Vector2(80, 74)
+
+[node name="Folder" type="Area2D"]
+script = ExtResource("1_mft3y")
+
+[node name="Label_Folder" type="Label" parent="."]
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 192.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 111
+text = "0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88, 27)
+shape = SubResource("RectangleShape2D_vonw3")
