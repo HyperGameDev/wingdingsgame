@@ -1,7 +1,10 @@
 # wingdings game.<br>aka, ☺︎■︎■︎■︎■︎■︎🏱︎<br>ie, the Code in Wingdings Challenge.
+<p><br></p>
 <h2 class="text-center"><strong>CONTROLS</strong></h2>
 <p class="text-center"><strong>WASD/Arrow Keys:</strong> Movement<br><strong>Space/Enter:</strong> Jump<span></span></p>
-<p></p>
+<p><br></p>
+
+# ABOUT
 <h3 class="text-center">This game was made in Godot in 12 hours for a Game Dev GAUNTLET challenge: "No Letter E".</h3>
 <p class="text-center"> Check out the entire, livestreamed-development here!
 <br><a style="font-family: inherit;" href="https://youtube.com/live/bpNEeBaVSjM" target="_blank">https://youtube.com/live/bpNEeBaVSjM</a></p>
