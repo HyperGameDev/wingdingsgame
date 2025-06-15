@@ -1,5 +1,9 @@
 # wingdings game.<br>aka, ☺︎■︎■︎■︎■︎■︎🏱︎<br>ie, the Code in Wingdings Challenge.
 <p><br></p>
+
+# PLAY
+Itch.io URL: <a href="https://hypergamedev.itch.io/wingdingsgame" target="_blank">https://hypergamedev.itch.io/wingdingsgame</a>
+<p><br></p>
 <h2 class="text-center"><strong>CONTROLS</strong></h2>
 <p class="text-center"><strong>WASD/Arrow Keys:</strong> Movement<br><strong>Space/Enter:</strong> Jump<span></span></p>
 <p><br></p>
