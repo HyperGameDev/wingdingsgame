@@ -9,7 +9,7 @@ Itch.io URL: <a href="https://hypergamedev.itch.io/wingdingsgame" target="_blank
 <p><br></p>
 
 # ABOUT
-<h3 class="text-center">This game was made in Godot in 12 hours for a Game Dev GAUNTLET challenge: "No Letter E".</h3>
+<h3 class="text-center">This game was made in Godot in 12 hours for a livestream challenge: "Code in Wingdings".</h3>
 <p class="text-center"> Check out the entire, livestreamed-development here!
 <br><a style="font-family: inherit;" href="https://youtube.com/live/bpNEeBaVSjM" target="_blank">https://youtube.com/live/bpNEeBaVSjM</a></p>
 <a style="font-family: inherit;" href="https://youtube.com/live/bpNEeBaVSjM" target="_blank"><img src="https://github.com/HyperGameDev/wingdingsgame/blob/main/GD%20Gauntlet%20(1).png?raw=true" alt="Livestream Thumbnail" style="width: 50%; height: auto;">
